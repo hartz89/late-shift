@@ -1,9 +1,9 @@
 ---
-name: whats-it-built-on
+name: fact-sheet
 description: Write and maintain a one-page fact sheet of what the project is built on and why. Invoke when the user asks what their stack is, or asks to write it down — "what's this built on", "what stack is this", "what am I using here", "what are my dependencies", "make a fact sheet", "write down the stack", "what did I pick for state management". Generates docs/stack.md from package manifests and imports, and regenerates rather than hand-edits.
 ---
 
-# whats-it-built-on
+# fact-sheet
 
 The user generated a lot of code fast, and somewhere in there they acquired a stack they can't fully list.
 They know the big pieces. They've lost the middle — the state library, the date library, the thing doing

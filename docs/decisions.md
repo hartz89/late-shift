@@ -80,3 +80,18 @@ would either state them vaguely or run long enough that nobody reads it.
 Cost: three folders, three `CATALOG` rows, three README sections, and three copies of `style.md` — because
 no dependencies means no shared file. Someone who wants all three installs all three. That's the trade for
 being able to install exactly the one you needed.
+
+## Cut the elevator pitch skill — it was README maintenance
+
+Two documentation skills, not three. `whats-this-again` and `docs/pitch.md` are gone; the entry above is
+left alone because entries record what was true when they were written.
+
+It didn't earn a folder. The README already says what the project is and who it's for, so a second file
+doing the same job worse would have gone stale first and then disagreed with the README. And the skill's
+recurring behaviour was thin — write 200 words, count them, rewrite on a pivot. That fits in a paragraph.
+The other two have real jobs that don't: `fact-sheet` diffs against the manifests, `paper-trail` runs a
+backfill that's too long to hand-wave.
+
+The bar this set: **a skill earns its folder if the work is either recurring or too long to paste.** One-time
+and trivial doesn't qualify — that's a README snippet. Cost: no artifact that states the project's purpose
+in the user's own voice, so the README is now load-bearing for that and needs to stay current by hand.
