@@ -13,7 +13,18 @@ REPO_RAW="https://raw.githubusercontent.com/hartz89/late-shift/main"
 # Every skill in the library: name<TAB>one-liner. Add a row to ship a new one.
 CATALOG='im-tired-boss	Plain, warm, low-jargon answers. For reading at 11 PM.
 poke-holes	Stress-tests an idea before you sink a weekend into it.
-im-feeling-lazy	Does the work instead of handing you a to-do list.'
+im-feeling-lazy	Does the work instead of handing you a to-do list.
+whats-this-again	A short pitch for your project that never grows into an essay.
+whats-it-built-on	A one-page fact sheet of your stack, and why each piece is there.
+paper-trail	A decision log, so you can find out why your own code is like this.'
+
+extras() {
+  # $1 = skill name. Bundled files to copy alongside SKILL.md.
+  case "$1" in
+    im-tired-boss|whats-this-again|whats-it-built-on|paper-trail) echo "style.md" ;;
+    *) echo "" ;;
+  esac
+}
 
 fetch() {
   # $1 = path relative to the repo root
@@ -111,9 +122,9 @@ install_skill() {
   fi
   mkdir -p "$dest"
   fetch "skills/$1/SKILL.md" > "$dest/SKILL.md"
-  if [ "$1" = "im-tired-boss" ]; then
-    fetch "skills/im-tired-boss/style.md" > "$dest/style.md"
-  fi
+  for extra in $(extras "$1"); do
+    fetch "skills/$1/$extra" > "$dest/$extra"
+  done
   echo "  $1 — installed at $dest" >&2
 }
 
@@ -133,6 +144,15 @@ for s in $SKILLS; do
       ;;
     im-feeling-lazy)
       echo "  Say \"I'm feeling lazy\" or \"just handle it\" to stop getting to-do lists." >&2
+      ;;
+    whats-this-again)
+      echo "  Say \"what is this project again\" to get a pitch written to docs/pitch.md." >&2
+      ;;
+    whats-it-built-on)
+      echo "  Say \"what's this built on\" to get a fact sheet written to docs/stack.md." >&2
+      ;;
+    paper-trail)
+      echo "  Say \"why is this like this\" to start a log at docs/decisions.md." >&2
       ;;
   esac
 done
