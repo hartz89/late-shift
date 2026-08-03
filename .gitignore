@@ -1,3 +1,9 @@
 # Scratch space — research, drafts, session notes. Never published.
 .local/
 CLAUDE.local.md
+
+# Dogfooding. fact-sheet and paper-trail run on this repo so they get used
+# before they get recommended — but a stack sheet for "POSIX sh and markdown"
+# and a decision log for five files aren't worth publishing. In your own
+# project, commit these. That's the point of them.
+docs/
