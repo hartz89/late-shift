@@ -1,6 +1,6 @@
 ---
 name: paper-trail
-description: Keep a decision log so the user can find out why their own code is the way it is. Invoke when the user asks why something was built a certain way, or asks to start keeping track — "why is this like this", "why did I do it this way", "I don't remember writing this", "why did we pick X", "start a decision log", "keep a paper trail", "how did we end up here". Writes docs/decisions.md, appends only consequential decisions, and can backfill a repo that already went dark.
+description: Keep a decision log so the user can find out why their own code is the way it is. Invoke when the user asks why something was built a certain way, or asks to start keeping track — "why is this like this", "why did I do it this way", "I don't remember writing this", "why did we pick X", "start a decision log", "keep a paper trail", "how did we end up here". Writes docs/decisions.md and appends only consequential decisions, as a byproduct of work already happening.
 ---
 
 # paper-trail
@@ -83,34 +83,20 @@ might want every rounding decision, a game every performance tradeoff. If they a
 paragraph as a sentence. **It is not configuration.** No schema, no config key, no defaults file. It's a
 sentence in a markdown file they can edit in thirty seconds.
 
-## Backfilling a repo that already went dark
+## The log starts today
 
-Nobody installs this on a fresh project. They install it on the one that already got away from them, which
-means there's a cold start.
+On an existing project, do not try to reconstruct decisions that were already made. It's tempting — the code
+is right there and you could produce a plausible reason for most of it. Don't.
 
-**Do not ask the user to explain their own code. Invert it.** State why you think the code is the way it is;
-let them correct you. Correcting a wrong sentence is enormously cheaper than producing a right one, which
-matters a lot at 11 PM.
+A reconstructed reason is a guess. Filed in the same list as decisions that were actually recorded, it makes
+every entry less trustworthy, because a reader can no longer tell which is which. One invented "why" poisons
+the file for the entries that were real.
 
-Go through the decisions that clear the bar above, five or six at a time. For each: your best read of the
-reasoning, in one sentence, hedged honestly.
+If the user asks for a backfill anyway, that's their call — do it, but keep it in a separate section under a
+heading that says it was reconstructed after the fact, and never in the main list.
 
-> The `sync` queue looks like it's serialized on purpose — probably because the API rate-limits per account
-> rather than per request. Right?
-
-Three things happen, and all three are useful:
-
-- You're right → costs them one word, and the entry is written.
-- You're wrong → they correct it, and the correction is the entry.
-- **Neither of you can say** → *that's the finding.* The reasoning is genuinely gone. Mark it: `Why: nobody
-  knows. Reconstructed from the code, not from a record.`
-
-That third case is the actual product. The value isn't explaining everything — it's drawing an honest line
-between what's still understood and what's genuinely lost. You can't decide what to rewrite until you know
-which parts nobody can account for.
-
-**This is a one-time backfill.** Once the log is seeded, the always-on instruction takes over and this never
-runs again.
+Say the honest thing instead: this starts from here. You don't get the old answers back, but you stop losing
+the new ones.
 
 ## Don't become the thing this repo exists to remove
 

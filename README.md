@@ -138,25 +138,27 @@ writes to your always-on config for you.
 
 ### paper-trail
 
-The more useful of the two, and the one with the sharpest trick in it.
+The model weighed three approaches, picked one, and dropped the other two on the floor. It knew why at the
+time. It just had no reason to say so, and you had no reason to ask, because the thing worked.
 
-Installing this on a fresh project is easy — entries just accrete. But nobody does that. You install it on
-the repo that already went dark, and then there's a cold start: it wants to know why the code is the way it
-is, and that's the exact thing you can't answer.
+So this writes it down while it's still true. Three lines per entry: what changed, why this way, and what it
+costs whoever hits it later.
 
-**So it doesn't ask. It guesses, and you correct it.**
+> **Swapped Zustand for signals in the editor**
+>
+> Zustand re-rendered the whole canvas on every keystroke. Signals scope updates to the node that changed.
+>
+> Cost: editor state no longer shows up in the devtools panel, and anything reading it has to subscribe
+> rather than select. Rejected memoizing the canvas — it fixed the symptom and made the tree worse.
 
-> The `sync` queue looks like it's serialized on purpose — probably because the API rate-limits per account
-> rather than per request. Right?
+That third paragraph is what makes an entry worth more than a commit message.
 
-Correcting a wrong sentence is much cheaper than writing a right one, which matters at 11 PM. And when it
-guesses wrong *and you can't correct it either* — that's the point of the whole exercise. It writes down
-that nobody knows, and now you have a short, specific list of the places where the reasoning is genuinely
-gone. That's a much more useful thing to own than a vague sense that your repo got away from you.
+The bar is deliberately high: **would undoing this be expensive?** Architecture, a major dependency, a key
+abstraction, a shortcut you took on purpose. Most work earns nothing. A good week might produce two entries.
 
-The bar for an entry is deliberately high: **would undoing this be expensive?** Architecture, a major
-dependency, a key abstraction, a shortcut you took on purpose. Not "this line is confusing." A week of
-honest work might produce two entries.
+**It starts from today.** It won't reconstruct the reasoning behind code you've already forgotten — that
+would mean filing guesses next to things you actually decided, and one invented "why" makes every other
+entry in the file harder to trust. You don't get the old answers back. You stop losing the new ones.
 
 ### fact-sheet
 
