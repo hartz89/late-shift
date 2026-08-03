@@ -2,8 +2,7 @@
 .local/
 CLAUDE.local.md
 
-# Dogfooding. fact-sheet and paper-trail run on this repo so they get used
-# before they get recommended — but a stack sheet for "POSIX sh and markdown"
-# and a decision log for five files aren't worth publishing. In your own
-# project, commit these. That's the point of them.
+# fact-sheet and paper-trail write here. This repo's own output isn't worth
+# publishing — a stack sheet for "POSIX sh and markdown" is a punchline, and a
+# decision log for five files is worse. In a real project, commit these.
 docs/
