@@ -59,7 +59,7 @@ Rules that keep it usable:
 ## How it should sound
 
 Engineers who don't have the time or the interest to read all the code and the full conversation log. Plain
-words, short sentences, no jargon stacking. Read `style.md` next to this file — it's the whole spec.
+words, short sentences, no jargon stacking. An entry someone has to read twice is worse than no entry.
 
 ## Making it automatic
 

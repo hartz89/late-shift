@@ -36,8 +36,9 @@ not have to add "ignore the tone."
 - Warm underneath. The premise is that we've all been there, not that the reader is a fool.
 - Skills that are blunt by design need an explicit warning in the README so nobody is ambushed.
 
-Read `skills/im-tired-boss/style.md` before writing prose anywhere in this repo — README included. It's the
-house style, and shipping docs that violate the skill we're selling is the obvious own-goal.
+Read the **The style** section of `skills/im-tired-boss/SKILL.md` before writing prose anywhere in this repo
+— README included. It's the house style, and shipping docs that violate the skill we're selling is the
+obvious own-goal.
 
 ## Non-negotiables
 
@@ -54,8 +55,7 @@ house style, and shipping docs that violate the skill we're selling is the obvio
 
 | Path | Holds |
 | :--- | :--- |
-| `skills/<name>/SKILL.md` | The skill. Frontmatter `name` + `description`; the description is what triggers it |
-| `skills/<name>/*.md` | Bundled reference files, loaded on demand once the skill fires |
+| `skills/<name>/SKILL.md` | The whole skill, one file. Frontmatter `name` + `description`; the description is what triggers it |
 | `install.sh` | The only script. Add a row to `CATALOG` to ship a new skill |
 | `README.md` | Per-skill pitch with a concrete before/after or sample exchange |
 | `.local/` | Gitignored scratch — research, drafts, notes. Never published |

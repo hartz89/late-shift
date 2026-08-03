@@ -17,14 +17,6 @@ im-feeling-lazy	Does the work instead of handing you a to-do list.
 fact-sheet	A one-page fact sheet of your stack, and why each piece is there.
 paper-trail	A decision log, so you can find out why your own code is like this.'
 
-extras() {
-  # $1 = skill name. Bundled files to copy alongside SKILL.md.
-  case "$1" in
-    im-tired-boss|fact-sheet|paper-trail) echo "style.md" ;;
-    *) echo "" ;;
-  esac
-}
-
 fetch() {
   # $1 = path relative to the repo root
   if [ -f "$1" ]; then
@@ -113,7 +105,7 @@ else
 fi
 
 install_skill() {
-  # $1 = skill name. Copies SKILL.md plus any bundled files it needs.
+  # $1 = skill name. Every skill is a single SKILL.md — nothing else to copy.
   dest="$SKILL_ROOT/$1"
   if [ -f "$dest/SKILL.md" ]; then
     echo "  $1 — already at $dest, skipped" >&2
@@ -121,9 +113,6 @@ install_skill() {
   fi
   mkdir -p "$dest"
   fetch "skills/$1/SKILL.md" > "$dest/SKILL.md"
-  for extra in $(extras "$1"); do
-    fetch "skills/$1/$extra" > "$dest/$extra"
-  done
   echo "  $1 — installed at $dest" >&2
 }
 

@@ -63,7 +63,7 @@ One screen. If it doesn't fit, you're listing dependencies instead of describing
 reader could guess.
 
 Write it the way you'd catch up a colleague who just joined — plain words, short sentences, no jargon
-stacking. Read `style.md` next to this file for the register.
+stacking. They're competent and short on time. Skip the throat-clearing and say the thing.
 
 ## Keeping it current
 
