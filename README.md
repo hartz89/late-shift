@@ -14,9 +14,7 @@ it to at 11 PM, when you have forty minutes and one shot at getting something ri
 - You have a full-time job, and this is not it.
 - You code after the kids are asleep, before they wake up, or in the 40 minutes between.
 - You're a weekend warrior with a side project that's 80% done (it has been 80% done for a year).
-- You are technically strong. Your reading comprehension is fine. You're just tired.
-
-  > *"I'm tired, boss."* — where this whole thing started.
+- You are technically strong. Your reading comprehension is fine. You're just a little tired.
 
 ## The skills
 
