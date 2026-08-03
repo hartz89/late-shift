@@ -20,16 +20,16 @@ it to at 11 PM, when you have forty minutes and one shot at getting something ri
 
 | Skill | What it does | Say |
 | :--- | :--- | :--- |
-| [`im-tired-boss`](./skills/im-tired-boss/) | Plain, warm, low-jargon answers. Short sentences, a bottom line on the long ones. | "I'm tired, boss." |
-| [`poke-holes`](./skills/poke-holes/) | Stress-tests an idea before you sink a weekend into it. | "Poke holes in this." |
-| [`im-feeling-lazy`](./skills/im-feeling-lazy/) | Does the work instead of handing you a to-do list. Exhausts every route before asking. | "I'm feeling lazy." |
-| [`fact-sheet`](./skills/fact-sheet/) | A one-page fact sheet of your stack, and why each piece is there. | "What's this built on?" |
-| [`paper-trail`](./skills/paper-trail/) | A decision log, so you can find out why your own code is like this. | "Why is this like this?" |
+| [`im-tired-boss`](./skills/im-tired-boss/SKILL.md) | Plain, warm, low-jargon answers. Short sentences, a bottom line on the long ones. | "I'm tired, boss." |
+| [`poke-holes`](./skills/poke-holes/SKILL.md) | Stress-tests an idea before you sink a weekend into it. | "Poke holes in this." |
+| [`im-feeling-lazy`](./skills/im-feeling-lazy/SKILL.md) | Does the work instead of handing you a to-do list. Exhausts every route before asking. | "I'm feeling lazy." |
+| [`fact-sheet`](./skills/fact-sheet/SKILL.md) | A one-page fact sheet of your stack, and why each piece is there. | "What's this built on?" |
+| [`paper-trail`](./skills/paper-trail/SKILL.md) | A decision log, so you can find out why your own code is like this. | "Why is this like this?" |
 
 The last two are a pair — same problem from two angles, described together
 [below](#the-two-documentation-ones). Install either, both, or neither.
 
-### im-tired-boss
+### [im-tired-boss](./skills/im-tired-boss/SKILL.md)
 
 The problem isn't that AI assistants are wrong. It's that they answer every question like they're defending
 a thesis — dense paragraphs, five qualifications per sentence, jargon stacked on jargon. At 9 AM with coffee,
@@ -59,7 +59,10 @@ Same information. One of them you can read with a sleeping baby on your arm.
 
 Say the line when you need it, and "okay, boss" when your coffee kicks in.
 
-### poke-holes
+The line is John Coffey's, from *The Green Mile* — a man worn out by the world, telling his guard he's ready
+for it to be over. Being up since 6 AM is not the same thing. Yes, we're being dramatic.
+
+### [poke-holes](./skills/poke-holes/SKILL.md)
 
 You have an idea. You are alone, it is late, and you are extremely enthusiastic — historically your worst
 combination. Ask, and it will genuinely try to break the idea before you spend a weekend on it.
@@ -83,7 +86,7 @@ a yes-man, just ruder. When it says *"couldn't talk you out of it,"* that's wort
 > how bad the idea is. It attacks the idea, never you — but it does not soften the landing. If you want
 > encouragement, this is the wrong file.
 
-### im-feeling-lazy
+### [im-feeling-lazy](./skills/im-feeling-lazy/SKILL.md)
 
 You asked for a thing. You got a numbered list of things *you* now have to go do. Eighty percent of the
 work is done and the remaining twenty is sitting in your lap, which is roughly where it was before you
@@ -127,14 +130,14 @@ different job for each.
 
 | | Writes | Goes stale by | So it's maintained by |
 | :--- | :--- | :--- | :--- |
-| [`fact-sheet`](./skills/fact-sheet/) | `docs/stack.md` | Drifting from the manifests | Regenerating and diffing. Never hand-edited. |
-| [`paper-trail`](./skills/paper-trail/) | `docs/decisions.md` | Nothing — it's a record | Appending only. Old entries are never corrected. |
+| [`fact-sheet`](./skills/fact-sheet/SKILL.md) | `docs/stack.md` | Drifting from the manifests | Regenerating and diffing. Never hand-edited. |
+| [`paper-trail`](./skills/paper-trail/SKILL.md) | `docs/decisions.md` | Nothing — it's a record | Appending only. Old entries are never corrected. |
 
 Each one also proposes a few lines for your project's `CLAUDE.md` (or `AGENTS.md`) and shows you the diff,
 so the upkeep happens during normal work instead of waiting for you to remember a trigger phrase. It never
 writes to your always-on config for you.
 
-### paper-trail
+### [paper-trail](./skills/paper-trail/SKILL.md)
 
 The model weighed three approaches, picked one, and dropped the other two on the floor. It knew why at the
 time. It just had no reason to say so, and you had no reason to ask, because the thing worked.
@@ -158,7 +161,7 @@ abstraction, a shortcut you took on purpose. Most work earns nothing. A good wee
 would mean filing guesses next to things you actually decided, and one invented "why" makes every other
 entry in the file harder to trust. You don't get the old answers back. You stop losing the new ones.
 
-### fact-sheet
+### [fact-sheet](./skills/fact-sheet/SKILL.md)
 
 You know the big pieces. You've lost the middle — the state library, the date library, the thing doing auth,
 and above all why each one is there instead of the obvious alternative.
@@ -196,9 +199,9 @@ Or by hand: copy any folder from [`skills/`](./skills/) into `~/.claude/skills/`
 compile.
 
 **Want one of these on all the time?** Skills are opt-in by design, which is usually what you want — but
-`im-tired-boss` is a standing preference for some people. Paste
-[`skills/im-tired-boss/style.md`](./skills/im-tired-boss/style.md) into your `~/.claude/CLAUDE.md` (or
-`AGENTS.md` for Cursor, Codex, Copilot) and it applies to every response, everywhere. The installer doesn't
+`im-tired-boss` is a standing preference for some people. Copy the bullets under
+[**The style**](./skills/im-tired-boss/SKILL.md) into your `~/.claude/CLAUDE.md` (or `AGENTS.md` for Cursor,
+Codex, Copilot) and it applies to every response, everywhere. The installer doesn't
 do this for you on purpose: editing your own always-on config should be a thing you decide to do, not
 something a `curl | sh` did while you weren't looking.
 
