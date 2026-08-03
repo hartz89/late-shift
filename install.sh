@@ -12,7 +12,8 @@ REPO_RAW="https://raw.githubusercontent.com/hartz89/late-shift/main"
 
 # Every skill in the library: name<TAB>one-liner. Add a row to ship a new one.
 CATALOG='im-tired-boss	Plain, warm, low-jargon answers. For reading at 11 PM.
-poke-holes	Stress-tests an idea before you sink a weekend into it.'
+poke-holes	Stress-tests an idea before you sink a weekend into it.
+im-feeling-lazy	Does the work instead of handing you a to-do list.'
 
 fetch() {
   # $1 = path relative to the repo root
@@ -129,6 +130,9 @@ for s in $SKILLS; do
       ;;
     poke-holes)
       echo "  Say \"poke holes in this\" or \"is this a bad idea?\" to stress-test something." >&2
+      ;;
+    im-feeling-lazy)
+      echo "  Say \"I'm feeling lazy\" or \"just handle it\" to stop getting to-do lists." >&2
       ;;
   esac
 done
