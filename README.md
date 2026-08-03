@@ -50,8 +50,7 @@ That is one sentence. It has a *retraction rate* in it.
 
 Same information. One of them you can read with a sleeping baby on your arm.
 
-This one runs two ways: **always on**, as an import in your `CLAUDE.md`, or **on demand**, where you say the
-line when you need it and "okay, boss" when your coffee kicks in.
+Say the line when you need it, and "okay, boss" when your coffee kicks in.
 
 ### poke-holes
 
@@ -97,10 +96,12 @@ Or by hand: copy any folder from [`skills/`](./skills/) into `~/.claude/skills/`
 `.claude/skills/` (just this one). That's the whole mechanism — there's no build step and nothing to
 compile.
 
-`im-tired-boss` in always-on mode is the one exception: the installer drops the rules file next to your
-`CLAUDE.md` and adds a single `@import` line, so your `CLAUDE.md` stays readable and the actual words live
-in one file you can edit. Other tools (Cursor, Codex, Copilot) don't support `@import` — paste the contents
-of [`skills/im-tired-boss/style.md`](./skills/im-tired-boss/style.md) into your `AGENTS.md` instead.
+**Want one of these on all the time?** Skills are opt-in by design, which is usually what you want — but
+`im-tired-boss` is a standing preference for some people. Paste
+[`skills/im-tired-boss/style.md`](./skills/im-tired-boss/style.md) into your `~/.claude/CLAUDE.md` (or
+`AGENTS.md` for Cursor, Codex, Copilot) and it applies to every response, everywhere. The installer doesn't
+do this for you on purpose: editing your own always-on config should be a thing you decide to do, not
+something a `curl | sh` did while you weren't looking.
 
 ## Tuning them
 

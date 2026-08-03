@@ -9,7 +9,6 @@
 set -eu
 
 REPO_RAW="https://raw.githubusercontent.com/hartz89/late-shift/main"
-MARKER="<!-- im-tired-boss -->"
 
 # Every skill in the library: name<TAB>one-liner. Add a row to ship a new one.
 CATALOG='im-tired-boss	Plain, warm, low-jargon answers. For reading at 11 PM.
@@ -42,14 +41,11 @@ known() {
 
 SKILLS="${SKILLS:-}"
 SCOPE="${SCOPE:-}"
-MODE="${MODE:-}"
 
 while [ $# -gt 0 ]; do
   case "$1" in
     --all) SKILLS=$(echo "$CATALOG" | cut -f1 | tr '\n' ' '); shift ;;
     --scope) SCOPE="$2"; shift 2 ;;
-    --always-on) MODE="always-on"; shift ;;
-    --on-demand) MODE="on-demand"; shift ;;
     -*) echo "Unknown flag: $1" >&2; exit 1 ;;
     *)
       if known "$1"; then
@@ -105,25 +101,6 @@ else
   SKILL_ROOT="./.claude/skills"
 fi
 
-# im-tired-boss is the one skill that can also run always-on, since it's a
-# standing style preference rather than something you reach for.
-wants_tired_boss=no
-for s in $SKILLS; do
-  [ "$s" = "im-tired-boss" ] && wants_tired_boss=yes
-done
-
-if [ "$wants_tired_boss" = yes ] && [ -z "$MODE" ]; then
-  echo "im-tired-boss can run two ways:" >&2
-  echo "  1) On demand  — say \"I'm tired, boss\" whenever you need it" >&2
-  echo "  2) Always on  — plain, warm answers in every response, from now on" >&2
-  prompt "Pick one [1/2]: "
-  case "$REPLY" in
-    1) MODE="on-demand" ;;
-    2) MODE="always-on" ;;
-    *) echo "Didn't catch that — run again and pick 1 or 2." >&2; exit 1 ;;
-  esac
-fi
-
 install_skill() {
   # $1 = skill name. Copies SKILL.md plus any bundled files it needs.
   dest="$SKILL_ROOT/$1"
@@ -139,32 +116,8 @@ install_skill() {
   echo "  $1 — installed at $dest" >&2
 }
 
-install_always_on() {
-  if [ "$SCOPE" = "global" ]; then
-    target="$HOME/.claude/CLAUDE.md"
-    style="$HOME/.claude/im-tired-boss-style.md"
-    import="@im-tired-boss-style.md"
-  else
-    target="./CLAUDE.md"
-    style="./.claude/im-tired-boss-style.md"
-    import="@.claude/im-tired-boss-style.md"
-  fi
-  mkdir -p "$(dirname "$target")" "$(dirname "$style")"
-  if [ -f "$target" ] && grep -qF "$MARKER" "$target" 2>/dev/null; then
-    echo "  im-tired-boss — already imported into $target, skipped" >&2
-    return 0
-  fi
-  fetch "skills/im-tired-boss/style.md" > "$style"
-  { echo ""; echo "$MARKER"; echo "$import"; } >> "$target"
-  echo "  im-tired-boss — rules at $style, imported into $target" >&2
-}
-
 for s in $SKILLS; do
-  if [ "$s" = "im-tired-boss" ] && [ "$MODE" = "always-on" ]; then
-    install_always_on
-  else
-    install_skill "$s"
-  fi
+  install_skill "$s"
 done
 
 echo "" >&2
@@ -172,11 +125,7 @@ echo "Done." >&2
 for s in $SKILLS; do
   case "$s" in
     im-tired-boss)
-      if [ "$MODE" = "always-on" ]; then
-        echo "  Using Cursor/Codex/Copilot too? Paste the style file into AGENTS.md — no @import there." >&2
-      else
-        echo "  Say \"I'm tired, boss\" when you need it. \"okay, boss\" turns it back off." >&2
-      fi
+      echo "  Say \"I'm tired, boss\" when you need it. \"okay, boss\" turns it back off." >&2
       ;;
     poke-holes)
       echo "  Say \"poke holes in this\" or \"is this a bad idea?\" to stress-test something." >&2
