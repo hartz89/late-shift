@@ -25,6 +25,12 @@ it to at 11 PM — when you have forty minutes and one shot at getting something
 | [`im-tired-boss`](./skills/im-tired-boss/) | Plain, warm, low-jargon answers. Short sentences, a bottom line on the long ones. | "I'm tired, boss." |
 | [`poke-holes`](./skills/poke-holes/) | Stress-tests an idea before you sink a weekend into it. | "Poke holes in this." |
 | [`im-feeling-lazy`](./skills/im-feeling-lazy/) | Does the work instead of handing you a to-do list. Exhausts every route before asking. | "I'm feeling lazy." |
+| [`whats-this-again`](./skills/whats-this-again/) | A short pitch for your project that never grows into an essay. Hard cap, 200 words. | "What is this project again?" |
+| [`whats-it-built-on`](./skills/whats-it-built-on/) | A one-page fact sheet of your stack, and why each piece is there. | "What's this built on?" |
+| [`paper-trail`](./skills/paper-trail/) | A decision log, so you can find out why your own code is like this. | "Why is this like this?" |
+
+The last three are a set — they solve the same problem from three angles, and they're described together
+[below](#the-three-documentation-ones). Install one, or all of them, or none.
 
 ### im-tired-boss
 
@@ -107,6 +113,79 @@ context window. That's the trade: more tokens, less of your evening.
 > ⚠️ **Lazy is about effort, not consent.** It still stops before anything irreversible or outward-facing —
 > deleting things it didn't create, publishing, pushing to a shared branch, spending your money. And it
 > tells you when something failed. "Just do it" doesn't mean "and tell me it went fine."
+
+## The three documentation ones
+
+Three months in, you can't explain your own codebase — and unlike on a team, nobody ever asked you to.
+
+Not because you forgot. Because you never knew. The model considered the alternatives, picked one, and threw
+the reasoning away for free:
+
+> *"AI writes my code now. I have no idea why half of it is the way it is."* — r/cursor, May 2026
+
+These three write it down instead. All of them produce files in a git-committed `docs/` directory, all of
+them are written **by the model, for you** — never for another agent to read — and none of them ever ask you
+to write anything. They're separate skills because they go stale in three different ways, and "maintained"
+means a different job for each one.
+
+| | Writes | Goes stale by | So it's maintained by |
+| :--- | :--- | :--- | :--- |
+| [`whats-it-built-on`](./skills/whats-it-built-on/) | `docs/stack.md` | Drifting from the manifests | Regenerating and diffing. Never hand-edited. |
+| [`paper-trail`](./skills/paper-trail/) | `docs/decisions.md` | Nothing — it's a record | Appending only. Old entries are never corrected. |
+| [`whats-this-again`](./skills/whats-this-again/) | `docs/pitch.md` | Growing into an essay | Rewriting in place against a hard 200-word cap. |
+
+This repo runs all three on itself. [`docs/`](./docs/) is the actual output, not a mockup.
+
+### paper-trail
+
+The most useful of the three, and the one with the sharpest trick in it.
+
+Installing this on a fresh project is easy — entries just accrete. But nobody does that. You install it on
+the repo that already went dark, and then there's a cold start: it wants to know why the code is the way it
+is, and that's the exact thing you can't answer.
+
+**So it doesn't ask. It guesses, and you correct it.**
+
+> The `sync` queue looks like it's serialized on purpose — probably because the API rate-limits per account
+> rather than per request. Right?
+
+Correcting a wrong sentence is much cheaper than writing a right one, which matters at 11 PM. And when it
+guesses wrong *and you can't correct it either* — that's the point of the whole exercise. It writes down
+that nobody knows, and now you have a short, specific list of the places where the reasoning is genuinely
+gone. That's a much more useful thing to own than a vague sense that your repo got away from you.
+
+The bar for an entry is deliberately high: **would undoing this be expensive?** Architecture, a major
+dependency, a key abstraction, a shortcut you took on purpose. Not "this line is confusing." A week of
+honest work might produce two entries.
+
+### whats-it-built-on
+
+You know the big pieces. You've lost the middle — the state library, the date library, the thing doing auth,
+and above all why each one is there instead of the obvious alternative.
+
+> **Dates**
+>
+> **date-fns**, not Day.js or Luxon. No stated reason; likely just what got reached for first.
+
+That second line is the whole point. It reads the manifests and the actual imports, so it's checkable — and
+because it's checkable, it'll tell you things like *"your fact sheet says Zustand, nothing imports Zustand
+anymore."* That's a dependency you're still paying for and no longer using.
+
+### whats-this-again
+
+Someone asks what you're building and you can't answer in under two minutes — not because it's complicated,
+but because you've been inside it for four months and every sentence has a caveat attached.
+
+The cap is the entire skill. **200 words, and it counts.** This is the one artifact with no ground truth to
+keep it honest, so without a hard limit it becomes a twelve-page essay in six months — one sentence added
+per session, none ever removed. New information means something else comes out. Deciding what doesn't make
+the page *is* the thinking.
+
+The test it holds itself to: could you read this aloud without editing it?
+
+> ⚠️ **These don't fix the volume problem.** If your actual complaint is that you just generated 600 lines
+> you can't review, a fact sheet doesn't make the diff smaller. That's a different problem and it needs a
+> different fix — smaller changes, review checkpoints. These three fix *provenance*, not volume.
 
 ## Install
 
