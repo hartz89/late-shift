@@ -1,10 +1,13 @@
+<p align="center">
+  <img src="./assets/banner.svg" alt="late-shift — Claude Code skills for the after-hours build" width="600">
+</p>
+
 # late-shift
 
 Claude Code skills for people who build after the day job ends.
 
-Not a productivity system. Not a framework. A handful of small, opinionated markdown files that make your
-AI assistant behave the way you actually need it to at 11 PM, when you have forty minutes and one shot at
-getting something right.
+A handful of small, opinionated markdown files that make your AI assistant behave the way you actually need
+it to at 11 PM — when you have forty minutes and one shot at getting something right.
 
 ## Who this is for
 
@@ -21,6 +24,7 @@ getting something right.
 | :--- | :--- | :--- |
 | [`im-tired-boss`](./skills/im-tired-boss/) | Plain, warm, low-jargon answers. Short sentences, a bottom line on the long ones. | "I'm tired, boss." |
 | [`poke-holes`](./skills/poke-holes/) | Stress-tests an idea before you sink a weekend into it. | "Poke holes in this." |
+| [`im-feeling-lazy`](./skills/im-feeling-lazy/) | Does the work instead of handing you a to-do list. Exhausts every route before asking. | "I'm feeling lazy." |
 
 ### im-tired-boss
 
@@ -75,6 +79,34 @@ a yes-man, just ruder. When it says *"couldn't talk you out of it,"* that's wort
 > ⚠️ **Not for the easily offended.** It is blunt, occasionally crass, and calibrates its bedside manner to
 > how bad the idea is. It attacks the idea, never you — but it does not soften the landing. If you want
 > encouragement, this is the wrong file.
+
+### im-feeling-lazy
+
+You asked for a thing. You got a numbered list of things *you* now have to go do. Eighty percent of the
+work is done and the remaining twenty is sitting in your lap, which is roughly where it was before you
+asked.
+
+> **You:** Go read what people are actually complaining about on Reddit. Be resourceful.
+>
+> **Before:** Reddit's public JSON is blocked, so here's what I'd need from you: (1) create an API app at
+> reddit.com/prefs/apps, (2) paste me the client ID and secret, (3) decide whether you also want Threads
+> and LinkedIn, and (4) let me know how you'd like to proceed.
+>
+> **After:** Public JSON is blocked and the fetch tool refuses the domain, so I drove your browser instead
+> — you were already logged in. Two agents running now, Reddit and Hacker News, both on the cheap tier so
+> this doesn't cost a fortune. Quotes are landing in `.local/research/`. Nothing needed from you.
+
+It works down the list before it bothers you: tool blocked, try the CLI, try the API, try the browser,
+*then* ask. When it genuinely needs you — a password, a payment, a call that's actually yours — it asks
+once, batches it, and keeps working on everything else in the meantime.
+
+It also spends money on your behalf, deliberately. Independent work gets fanned out to parallel subagents,
+mechanical grunt work goes to a cheaper model, and bulk reading happens somewhere other than your main
+context window. That's the trade: more tokens, less of your evening.
+
+> ⚠️ **Lazy is about effort, not consent.** It still stops before anything irreversible or outward-facing —
+> deleting things it didn't create, publishing, pushing to a shared branch, spending your money. And it
+> tells you when something failed. "Just do it" doesn't mean "and tell me it went fine."
 
 ## Install
 
