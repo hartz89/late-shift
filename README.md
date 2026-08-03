@@ -7,7 +7,7 @@
 Claude Code skills for people who build after the day job ends.
 
 A handful of small, opinionated markdown files that make your AI assistant behave the way you actually need
-it to at 11 PM — when you have forty minutes and one shot at getting something right.
+it to at 11 PM, when you have forty minutes and one shot at getting something right.
 
 ## Who this is for
 
