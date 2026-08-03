@@ -132,8 +132,6 @@ different job for each.
 | [`fact-sheet`](./skills/fact-sheet/) | `docs/stack.md` | Drifting from the manifests | Regenerating and diffing. Never hand-edited. |
 | [`paper-trail`](./skills/paper-trail/) | `docs/decisions.md` | Nothing — it's a record | Appending only. Old entries are never corrected. |
 
-This repo runs both on itself. [`docs/`](./docs/) is the actual output, not a mockup.
-
 Each one also proposes a few lines for your project's `CLAUDE.md` (or `AGENTS.md`) and shows you the diff,
 so the upkeep happens during normal work instead of waiting for you to remember a trigger phrase. It never
 writes to your always-on config for you.
