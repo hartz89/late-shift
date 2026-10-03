@@ -143,7 +143,7 @@ reach you: one at a time, with enough context to answer cold, and a pick you can
 > **It:** Done. The build script agent is running. Decision 2 of 2: ...
 
 Every answer gets acted on right away, while you read the next question. When the decisions are done, you
-get the short list of things only you can do: the paperwork, the logins, the text to a customer. The ones
+get the things only you can do, one at a time and the same way: the paperwork, the logins, the text to a customer. The ones
 that start a clock go first.
 
 It keeps the running list in a file in your repo while you're away, so a long session getting summarised

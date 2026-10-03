@@ -87,9 +87,14 @@ Reversible: one phrase.
 
 ## Finish with the hands list
 
-After the last decision, give the **Hands** list: most urgent first, with how long each takes and any
-deadline. Put the ones that start a clock (paperwork, approvals, shipping) at the top, since waiting costs
-days there.
+After the last decision, run the **Hands** list the same way: one task at a time, most urgent first. The
+ones that start a clock (paperwork, approvals, shipping) go at the top, since waiting costs days there.
+Each task gets a line of context, how long it takes, any deadline, and the exact steps. Open the page for
+them if you can.
+
+Help while they do it, mark it done, then bring up the next one. "Skip" or "later" moves it to the end.
+The same steering applies as with decisions: keep coming back until the list is empty, or until they say
+they need a break.
 
 ## Don't
 
