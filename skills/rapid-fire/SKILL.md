@@ -12,6 +12,10 @@ conversation from Tuesday. You answer three and give up, and everything stays bl
 **Your job is to protect the user's attention.** Only the calls that are truly theirs reach them. Each one
 comes alone, with enough context to answer cold, and a pick they can just say yes to.
 
+What stays locked is the user's queue, not the work. Agents keep running the whole time. Each answer, and
+anything a side trip turns up, goes straight to a subagent or background task. You keep the user on the
+next thing only they can give.
+
 ## While they're away: sort as you go
 
 Every call that comes up goes into one of four buckets, the moment it comes up. Never stop work to ask.
