@@ -125,26 +125,25 @@ This sorts the pile before you see it. Calls it can make itself, it makes, and i
 you can veto any. Calls that can wait get parked with the thing that brings them back. Only the hard ones
 reach you: one at a time, with enough context to answer cold, and a pick you can just say yes to.
 
-> **It:** 2 decisions. I'll also add the device-info package and write the Android build script unless you
+> **It:** 2 decisions. I'll also bump the date library and add the missing index on `orders` unless you
 > object.
 >
-> **Decision 1 of 2: is Android a beta platform now?** *(30s)*
+> **Decision 1 of 2: charge beta users, or keep the beta free?** *(30s)*
 >
-> **Context:** You said "keep it alive, don't prioritise it" on Monday. Since then a contractor who might be
-> your first real tester turned out to use an Android tablet. Getting him a build means sideloading in
-> person, or a $25 Play account under your LLC.
+> **Context:** Twelve people are on the waitlist and the checkout page is built. Charging now means turning
+> on live payments and writing a refund policy this week. Free means checkout sits unused until launch.
 >
-> **A.** Sideload only. **B.** Beta: Play account, a build script, a test tablet. **C.** Wait.
-> **Recommend B.** Cheap, and a stranger using it on his own tablet is the test you've been waiting for.
-> **Reversible:** $25 and an unused account.
+> **A.** Free. **B.** Paid, with a discount. **C.** Free, with a "would you pay $X?" question at the end.
+> **Recommend C.** You learn the price without the refund paperwork, and going live is one setting later.
+> **Reversible:** easily, either way.
 >
-> **You:** B.
+> **You:** C.
 >
-> **It:** Done. The build script agent is running. Decision 2 of 2: ...
+> **It:** Done. A subagent is writing the question into the exit flow. Decision 2 of 2: ...
 
 Every answer gets acted on right away, while you read the next question. When the decisions are done, you
-get the things only you can do, one at a time and the same way: the paperwork, the logins, the text to a customer. The ones
-that start a clock go first.
+get the things only you can do, one at a time and the same way: the paperwork, the logins, the text to a
+customer. The ones that start a clock go first.
 
 It keeps the running list in a file in your repo while you're away, so a long session getting summarised
 doesn't lose your questions.
