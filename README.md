@@ -23,6 +23,7 @@ it to at 11 PM, when you have forty minutes and one shot at getting something ri
 | [`im-tired-boss`](./skills/im-tired-boss/SKILL.md) | Plain, warm, low-jargon answers. Short sentences, a bottom line on the long ones. | "I'm tired, boss." |
 | [`poke-holes`](./skills/poke-holes/SKILL.md) | Stress-tests an idea before you sink a weekend into it. | "Poke holes in this." |
 | [`im-feeling-lazy`](./skills/im-feeling-lazy/SKILL.md) | Does the work instead of handing you a to-do list. Exhausts every route before asking. | "I'm feeling lazy." |
+| [`rapid-fire`](./skills/rapid-fire/SKILL.md) | The decisions that piled up while you were away, one at a time, about 30 seconds each. | "What needs me?" |
 | [`fact-sheet`](./skills/fact-sheet/SKILL.md) | A one-page fact sheet of your stack, and why each piece is there. | "What's this built on?" |
 | [`paper-trail`](./skills/paper-trail/SKILL.md) | A decision log, so you can find out why your own code is like this. | "Why is this like this?" |
 
@@ -113,6 +114,40 @@ context window. That's the trade: more tokens, less of your evening.
 > ⚠️ **Lazy is about effort, not consent.** It still stops before anything irreversible or outward-facing —
 > deleting things it didn't create, publishing, pushing to a shared branch, spending your money. And it
 > tells you when something failed. "Just do it" doesn't mean "and tell me it went fine."
+
+### [rapid-fire](./skills/rapid-fire/SKILL.md)
+
+The agent kept working while you put the kids to bed. You come back to fifteen questions in one block of
+text. Half were settled last week, and the rest assume you remember Tuesday. You answer three, close the
+laptop, and everything stays blocked.
+
+This sorts the pile before you see it. Calls it can make itself, it makes, and it lists them in one line so
+you can veto any. Calls that can wait get parked with the thing that brings them back. Only the hard ones
+reach you: one at a time, with enough context to answer cold, and a pick you can just say yes to.
+
+> **It:** 2 decisions. I'll also add the device-info package and write the Android build script unless you
+> object.
+>
+> **Decision 1 of 2: is Android a beta platform now?** *(30s)*
+>
+> **Context:** You said "keep it alive, don't prioritise it" on Monday. Since then a contractor who might be
+> your first real tester turned out to use an Android tablet. Getting him a build means sideloading in
+> person, or a $25 Play account under your LLC.
+>
+> **A.** Sideload only. **B.** Beta: Play account, a build script, a test tablet. **C.** Wait.
+> **Recommend B.** Cheap, and a stranger using it on his own tablet is the test you've been waiting for.
+> **Reversible:** $25 and an unused account.
+>
+> **You:** B.
+>
+> **It:** Done. The build script agent is running. Decision 2 of 2: ...
+
+Every answer gets acted on right away, while you read the next question. When the decisions are done, you
+get the short list of things only you can do: the paperwork, the logins, the text to a customer. The ones
+that start a clock go first.
+
+It keeps the running list in a file in your repo while you're away, so a long session getting summarised
+doesn't lose your questions.
 
 ## The two documentation ones
 

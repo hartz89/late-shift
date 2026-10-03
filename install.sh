@@ -14,6 +14,7 @@ REPO_RAW="https://raw.githubusercontent.com/hartz89/late-shift/main"
 CATALOG='im-tired-boss	Plain, warm, low-jargon answers. For reading at 11 PM.
 poke-holes	Stress-tests an idea before you sink a weekend into it.
 im-feeling-lazy	Does the work instead of handing you a to-do list.
+rapid-fire	The decisions that piled up while you were away, one at a time.
 fact-sheet	A one-page fact sheet of your stack, and why each piece is there.
 paper-trail	A decision log, so you can find out why your own code is like this.'
 
