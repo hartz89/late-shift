@@ -43,6 +43,11 @@ starts", "before the first paid user"). If you can make the call yourself, it's 
 Order the Asks by how much work each answer unblocks. A good session has two to five. Fifteen means the
 triage didn't happen.
 
+**A big pile is permission to decide more yourself.** When the Asks still run long, take the least
+consequential of them and make the calls: your pick, or what their past answers suggest. Say so in the
+opening line, so they can veto any of them. Their time on the few that matter beats their time on all of
+them.
+
 ## Asking: one at a time
 
 Open with the count and the calls you're making yourself, one line each, so they can veto any of them:
@@ -71,8 +76,14 @@ Reversible: one phrase.
 - **Record who decided and when**, in the place the work lives, not only in the list.
 - **"Not now" or "bring it back when X" is an answer.** Park it with that trigger and move on.
 - **Don't re-ask** anything an earlier answer settles, this session or a past one.
-- **They'll interrupt.** A bug, a new idea, a "wait, also". Handle it, then put the pending question back
-  in one line: "Still open: A, B (my pick) or C?" Don't re-send the whole brief.
+- **Never move on without an explicit answer.** A long reply about something else isn't an answer, even if
+  it sounds like agreement. Anything less than an explicit answer means the same question is still open.
+- **Answers arrive out of order.** "Decision 1: A" can turn up three messages later, tucked between a bug
+  report and a new idea. Log every answer the moment it shows up, whichever question it's for.
+- **Side trips are fine. Getting lost isn't.** A bug, a new idea, a "wait, also": handle it briefly,
+  hand off anything big to a background task, then steer back. Put the pending question back in one line:
+  "Still open: A, B (my pick) or C?" Don't re-send the whole brief. Keep steering back until the list is
+  empty or they say stop.
 
 ## Finish with the hands list
 
