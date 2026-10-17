@@ -68,6 +68,9 @@ Recommend B. One sentence on why.
 Reversible: one phrase.
 ```
 
+- **Ask through the harness's question prompt when it has one** (in Claude Code, the AskUserQuestion
+  tool). The options become keys, the recommendation goes first and says so, and the context above goes
+  in the question's text. A keypress beats typing "B". Prose is the fallback, not the default.
 - **Assume they remember nothing.** No "as we discussed", no item numbers without a name.
 - **About 30 seconds each.** If one truly needs longer, say so in the heading and why.
 - **Always recommend.** A question with no pick hands the thinking back to them.

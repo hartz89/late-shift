@@ -26,8 +26,10 @@ Decided for you: 4, listed below so you can veto any.
 ```
 
 Then the items that need them, one at a time, in the rapid-fire shape: context for someone who remembers
-nothing, options, a recommendation, how reversible. Then the shipped list, one line each with a link.
-Then the blocked one and what unblocks it. Then the calls you made for them.
+nothing, options, a recommendation, how reversible. When the harness has a question prompt (in Claude
+Code, the AskUserQuestion tool), ask through it: options as keys, the recommendation first. The brief is
+the text; the ask is a keypress. Then the shipped list, one line each with a link. Then the blocked one
+and what unblocks it. Then the calls you made for them.
 
 ## Size follows stakes
 
