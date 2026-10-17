@@ -16,7 +16,9 @@ poke-holes	Stress-tests an idea before you sink a weekend into it.
 im-feeling-lazy	Does the work instead of handing you a to-do list.
 rapid-fire	The decisions that piled up while you were away, one at a time.
 fact-sheet	A one-page fact sheet of your stack, and why each piece is there.
-paper-trail	A decision log, so you can find out why your own code is like this.'
+paper-trail	A decision log, so you can find out why your own code is like this.
+brief-me	Where things stand, sized to the stakes, with the receipts one question away.
+debrief	What shipped, what it cost, and whether the agents are paying for themselves.'
 
 fetch() {
   # $1 = path relative to the repo root
@@ -139,6 +141,12 @@ for s in $SKILLS; do
       ;;
     paper-trail)
       echo "  Say \"why is this like this\" to start a log at docs/decisions.md." >&2
+      ;;
+    brief-me)
+      echo "  Say \"brief me\" when you sit back down. \"Go long\" turns it off." >&2
+      ;;
+    debrief)
+      echo "  Say \"debrief\" at the end of a session to get the report and a ledger row per shipped item." >&2
       ;;
   esac
 done
