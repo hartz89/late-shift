@@ -26,6 +26,8 @@ it to at 11 PM, when you have forty minutes and one shot at getting something ri
 | [`rapid-fire`](./skills/rapid-fire/SKILL.md) | The decisions that piled up while you were away, one at a time, about 30 seconds each. | "What needs me?" |
 | [`fact-sheet`](./skills/fact-sheet/SKILL.md) | A one-page fact sheet of your stack, and why each piece is there. | "What's this built on?" |
 | [`paper-trail`](./skills/paper-trail/SKILL.md) | A decision log, so you can find out why your own code is like this. | "Why is this like this?" |
+| [`brief-me`](./skills/brief-me/SKILL.md) | Where things stand, sized to the stakes, with the receipts one question away. | "Brief me." |
+| [`debrief`](./skills/debrief/SKILL.md) | What shipped, what it cost, and whether the agents are paying for themselves. | "Debrief." |
 
 The last two are a pair — same problem from two angles, described together
 [below](#the-two-documentation-ones). Install either, both, or neither.
@@ -147,6 +149,60 @@ customer. The ones that start a clock go first.
 
 It keeps the running list in a file in your repo while you're away, so a long session getting summarised
 doesn't lose your questions.
+
+## The two for running a team of agents
+
+You stopped writing the code. You run the agents that write it, and your evening is a chief-of-staff job
+now: hand out the work, handle what comes back, decide the few things only you can decide. The tools
+haven't caught up. What comes back is a wall of text per agent, and the only way to find the two things
+that need you is to read all of it.
+
+These two give you the brief instead. One for when you sit down, one for when you get up.
+
+### [brief-me](./skills/brief-me/SKILL.md)
+
+Before:
+
+> **It:** I've completed the layers panel implementation. First, I analyzed the existing canvas
+> architecture and found that the z-ordering was handled in three places... *(1,800 words follow. The one
+> question that needs you is in paragraph nine.)*
+
+After:
+
+> **You:** Brief me.
+>
+> **It:** Three branches in, one waiting on you.
+> **Needs you:** 1 (a minute)
+> **Shipped:** 2. Layers panel (#212), calibration nudges (#209).
+> **Blocked:** 1. Account deletion, on the vendor's export API. Nothing for you.
+> **Decided for you:** 3, below. Veto any.
+>
+> **Decision 1 of 1: ship the layers panel behind a flag, or on for everyone?** *(1 min)* ...
+>
+> **You:** Receipts on the layers panel.
+>
+> **It:** *(the agent's full report, the diff stat, the test run)*
+
+Sized to the stakes. A quiet night is three lines, a reversible call is one line, and only a call you
+can't undo gets a whole screen. Every number has a receipt one question away, which is what makes the
+short version safe to trust.
+
+### [debrief](./skills/debrief/SKILL.md)
+
+The question nobody answers: was it worth it?
+
+> **You:** Debrief.
+>
+> **It:**
+> **Shipped:** 2. Layers panel (#212), calibration nudges (#209).
+> **Not shipped:** 1. Account deletion. Vendor API; nothing for you.
+> **Decided for you:** 3. Bumped the date library. Kept the beta free. Named the flag `layers`.
+> **Cost:** 3.4 agent-hours, about 900k tokens. 4 minutes of yours per shipped item.
+> **Gate:** 2 asks. You waved both through unchanged, both about copy. That's a rule now.
+
+And one row per shipped item in a CSV, so in six weeks you can answer "is this paying for itself" with a
+number instead of a feeling. The same rows tell you whether the gate is working: asks per item should go
+down as the rules go up. If the same question keeps coming back, that's a bug, and now you can see it.
 
 ## The two documentation ones
 

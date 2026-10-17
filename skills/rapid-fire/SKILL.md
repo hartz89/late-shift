@@ -68,6 +68,9 @@ Recommend B. One sentence on why.
 Reversible: one phrase.
 ```
 
+- **Ask through the harness's question prompt when it has one** (in Claude Code, the AskUserQuestion
+  tool). The options become keys, the recommendation goes first and says so, and the context above goes
+  in the question's text. A keypress beats typing "B". Prose is the fallback, not the default.
 - **Assume they remember nothing.** No "as we discussed", no item numbers without a name.
 - **About 30 seconds each.** If one truly needs longer, say so in the heading and why.
 - **Always recommend.** A question with no pick hands the thinking back to them.
@@ -78,6 +81,9 @@ Reversible: one phrase.
 - **Act on each answer right away**, in the background: start the agent, write the file, take it off the
   list. Then ask the next one.
 - **Record who decided and when**, in the place the work lives, not only in the list.
+- **Ask once, then it's a rule.** When an answer settles a *kind* of call, not just this one, write the rule
+  where the project keeps its standing rules, with who decided and when. Next time, decide on the rule and
+  list it. The same question coming back is a bug.
 - **"Not now" or "bring it back when X" is an answer.** Park it with that trigger and move on.
 - **Don't re-ask** anything an earlier answer settles, this session or a past one.
 - **Never move on without an explicit answer.** A long reply about something else isn't an answer, even if
